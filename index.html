@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BIGWIG & ASSOCIATES - Distinguished law firm in Lagos, Nigeria specializing in litigation, property management, and legal consultancy. Led by Barr. Abdul Kareem Ganiyu.">
+  <meta name="theme-color" content="#1a1a2e">
+  <title>BIGWIG & ASSOCIATES | Legal Excellence in Lagos</title>
+  <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiQklHV0lHICYgQVNTT0NJQVRFUyIsInNob3J0X25hbWUiOiJCSUdXSUciLCJzdGFydF91cmwiOiIvIiwiZGlzcGxheSI6InN0YW5kYWxvbmUiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiIzFhMWEyZSIsInRoZW1lX2NvbG9yIjoiIzFhMWEyZSIsIm9yaWVudGF0aW9uIjoicG9ydHJhaXQiLCJpY29ucyI6W3sic3JjIjoiSU1HLTIwMjUwNzA0LVdBMDAwMy5qcGciLCJzaXplcyI6IjE5MngxOTIiLCJ0eXBlIjoiaW1hZ2UvanBlZyJ9LHsic3JjIjoiSU1HLTIwMjUwNzA0LVdBMDAwMy5qcGciLCJzaXplcyI6IjUxMng1MTIiLCJ0eXBlIjoiaW1hZ2UvanBlZyJ9XX0=">
+  <link rel="icon" type="image/jpeg" href="IMG-20250704-WA0003.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --gold: #d4af37;
+      --dark-gold: #b8941f;
+      --navy: #1a1a2e;
+      --deep-navy: #0f0f1e;
+      --charcoal: #2d2d44;
+      --cream: #f5f5f0;
+      --silver: #e8e8e8;
+      --text-light: rgba(255, 255, 255, 0.95);
+      --text-dim: rgba(255, 255, 255, 0.7);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Crimson Text', serif;
+      background: var(--cream);
+      color: #333;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Page transition */
+    .page {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Header & Navigation */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--navy);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .header-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-img {
+      height: 50px;
+      width: 50px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+    }
+
+    .brand-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--gold);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .brand-text .tagline {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      font-style: italic;
+      margin-top: -2px;
+    }
+
+    /* Desktop Navigation */
+    nav.desktop-nav {
+      display: flex;
+      gap: 35px;
+    }
+
+    nav.desktop-nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      position: relative;
+      transition: color 0.3s ease;
+      padding: 5px 0;
+    }
+
+    nav.desktop-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.3s ease;
+    }
+
+    nav.desktop-nav a:hover,
+    nav.desktop-nav a.active {
+      color: var(--gold);
+    }
+
+    nav.desktop-nav a:hover::after,
+    nav.desktop-nav a.active::after {
+      width: 100%;
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      width: 28px;
+      height: 3px;
+      background: var(--gold);
+      transition: all 0.3s ease;
+      border-radius: 3px;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(8px, -8px);
+    }
+
+    /* Mobile Navigation */
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      max-width: 300px;
+      height: 100vh;
+      background: var(--deep-navy);
+      padding: 100px 30px 30px;
+      transition: right 0.4s ease;
+      z-index: 999;
+      border-left: 2px solid var(--gold);
+    }
+
+    .mobile-nav.active {
+      right: 0;
+    }
+
+    .mobile-nav a {
+      display: block;
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 600;
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .mobile-nav a:hover,
+    .mobile-nav a.active {
+      color: var(--gold);
+      padding-left: 10px;
+    }
+
+    /* Overlay for mobile menu */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 998;
+    }
+
+    .overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--deep-navy) 100%);
+      display: flex;
+      align-items: center;
+      padding: 120px 40px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(212, 175, 55, 0.03) 2px, rgba(212, 175, 55, 0.03) 4px);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-text {
+      animation: slideInLeft 1s ease;
+    }
+
+    .hero-label {
+      font-size: 0.9rem;
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--text-light);
+      margin-bottom: 25px;
+      letter-spacing: -1px;
+    }
+
+    .hero-title .highlight {
+      color: var(--gold);
+    }
+
+    .hero-description {
+      font-size: 1.2rem;
+      color: var(--text-dim);
+      margin-bottom: 35px;
+      line-height: 1.8;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 15px 35px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      display: inline-block;
+      cursor: pointer;
+      font-family: 'Crimson Text', serif;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      border: 2px solid var(--gold);
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--gold);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--gold);
+      border: 2px solid var(--gold);
+    }
+
+    .btn-secondary:hover {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .hero-image {
+      position: relative;
+      animation: slideInRight 1s ease;
+    }
+
+    .lawyer-frame {
+      position: relative;
+      max-width: 450px;
+      margin: 0 auto;
+    }
+
+    .lawyer-frame::before {
+      content: '';
+      position: absolute;
+      inset: -15px;
+      border: 3px solid var(--gold);
+      border-radius: 10px;
+      opacity: 0.5;
+    }
+
+    .lawyer-frame img {
+      width: 100%;
+      border-radius: 10px;
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Main Content Sections */
+    section {
+      padding: 100px 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+
+    .section-label {
+      font-size: 0.85rem;
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 900;
+      margin-bottom: 20px;
+      color: var(--navy);
+    }
+
+    .section-description {
+      font-size: 1.15rem;
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* About Section */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+
+    .about-image {
+      position: relative;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
+
+    .about-image::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      right: 20px;
+      bottom: 20px;
+      border: 3px solid var(--gold);
+      border-radius: 10px;
+      z-index: -1;
+    }
+
+    .about-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    .about-text strong {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .quote-box {
+      background: var(--navy);
+      color: var(--text-light);
+      padding: 40px;
+      border-radius: 10px;
+      border-left: 5px solid var(--gold);
+      font-size: 1.3rem;
+      font-style: italic;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .quote-box .author {
+      font-size: 0.9rem;
+      color: var(--gold);
+      margin-top: 15px;
+      font-style: normal;
+    }
+
+    /* Services Section */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 35px;
+      margin-top: 50px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      border-top: 4px solid var(--gold);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin-bottom: 15px;
+    }
+
+    .service-card p {
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* Practice Areas */
+    .practice-areas {
+      background: var(--silver);
+      padding: 80px 40px;
+      margin: 60px 0;
+    }
+
+    .practice-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      max-width: 1400px;
+      margin: 50px auto 0;
+    }
+
+    .practice-item {
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      border-left: 4px solid var(--gold);
+      transition: all 0.3s ease;
+    }
+
+    .practice-item:hover {
+      transform: translateX(10px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .practice-item h4 {
+      font-family: 'Playfair Display', serif;
+      color: var(--navy);
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+
+    .practice-item p {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    /* Contact Section */
+    .contact-content {
+      max-width: 1200px;
+      margin: 50px auto 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 35px;
+      margin-bottom: 60px;
+    }
+
+    .contact-card {
+      background: white;
+      padding: 35px;
+      border-radius: 10px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+    }
+
+    .contact-icon {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .contact-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--navy);
+      margin-bottom: 15px;
+    }
+
+    .contact-card p {
+      color: #666;
+      margin-bottom: 8px;
+      word-break: break-word;
+    }
+
+    .contact-card a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-card a:hover {
+      color: var(--dark-gold);
+      text-decoration: underline;
+    }
+
+    .map-container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      margin-top: 40px;
+    }
+
+    .map-container h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .map-placeholder {
+      background: var(--silver);
+      height: 300px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+      font-size: 1.1rem;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--navy);
+      color: var(--text-light);
+      padding: 60px 40px 30px;
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .footer-section p,
+    .footer-section a {
+      color: var(--text-dim);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+      color: var(--gold);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background: var(--charcoal);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background: var(--gold);
+      color: var(--navy);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      padding-top: 30px;
+      text-align: center;
+      color: var(--text-dim);
+    }
+
+    .footer-bottom .gold-text {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    /* PWA Install Button */
+    .install-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      display: none;
+    }
+
+    .install-container.show {
+      display: block;
+      animation: slideUp 0.5s ease;
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(100px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .install-prompt {
+      background: var(--navy);
+      color: var(--text-light);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      max-width: 300px;
+      border: 2px solid var(--gold);
+    }
+
+    .install-prompt h4 {
+      font-family: 'Playfair Display', serif;
+      color: var(--gold);
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .install-prompt p {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      margin-bottom: 15px;
+    }
+
+    .install-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .install-buttons button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .install-yes {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .install-yes:hover {
+      background: var(--dark-gold);
+      transform: translateY(-2px);
+    }
+
+    .install-no {
+      background: transparent;
+      color: var(--gold);
+      border: 2px solid var(--gold);
+    }
+
+    .install-no:hover {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    /* Animations */
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 968px) {
+      .header-content {
+        padding: 15px 25px;
+      }
+
+      nav.desktop-nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hero {
+        padding: 100px 25px 60px;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .hero-image {
+        order: -1;
+      }
+
+      .lawyer-frame {
+        max-width: 350px;
+      }
+
+      section {
+        padding: 70px 25px;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .practice-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .brand-text h1 {
+        font-size: 1.1rem;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .install-container {
+        bottom: 10px;
+        right: 10px;
+        left: 10px;
+      }
+
+      .install-prompt {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <div class="logo-section">
+        <img src="IMG-20250704-WA0003.jpg" alt="BIGWIG & ASSOCIATES Logo" class="logo-img">
+        <div class="brand-text">
+          <h1>BIGWIG & ASSOCIATES</h1>
+          <div class="tagline">"Sue That Bastard"</div>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav">
+        <a href="#" data-page="home" class="nav-link active">Home</a>
+        <a href="#" data-page="about" class="nav-link">About</a>
+        <a href="#" data-page="services" class="nav-link">Services</a>
+        <a href="#" data-page="practice" class="nav-link">Practice Areas</a>
+        <a href="#" data-page="contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Hamburger Menu -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#" data-page="home" class="nav-link active">Home</a>
+    <a href="#" data-page="about" class="nav-link">About</a>
+    <a href="#" data-page="services" class="nav-link">Services</a>
+    <a href="#" data-page="practice" class="nav-link">Practice Areas</a>
+    <a href="#" data-page="contact" class="nav-link">Contact</a>
+  </nav>
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- HOME PAGE -->
+  <div id="home" class="page active">
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-label">Distinguished Legal Practice</div>
+          <h1 class="hero-title">
+            Legal Excellence in <span class="highlight">Litigation & Property</span>
+          </h1>
+          <p class="hero-description">
+            BIGWIG & ASSOCIATES provides fearless legal representation and strategic counsel 
+            for individuals and businesses. With over 6 years of experience, we deliver 
+            results with boldness and precision.
+          </p>
+          <div class="hero-cta">
+            <a href="#" data-page="about" class="btn btn-primary nav-link">Learn More</a>
+            <a href="#" data-page="contact" class="btn btn-secondary nav-link">Get Consultation</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="lawyer-frame">
+            <img src="FB_IMG_1751617888322.jpg" alt="Barr. Abdul Kareem Ganiyu - Lead Counsel">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Services Preview -->
+    <section>
+      <div class="section-header">
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">Our Legal Services</h2>
+        <p class="section-description">
+          Comprehensive legal solutions tailored to protect your interests and achieve your goals.
+        </p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">⚖️</div>
+          <h3>Strategic Legal Counsel</h3>
+          <p>Expert legal advice and strategic planning to navigate complex legal challenges and make informed decisions.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏛️</div>
+          <h3>Courtroom Representation</h3>
+          <p>Fearless litigation and representation in all courts, fighting tirelessly for your rights and interests.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📜</div>
+          <h3>Property Management</h3>
+          <p>Comprehensive property law services including transactions, disputes, and title documentation.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💼</div>
+          <h3>Contract Review</h3>
+          <p>Thorough contract drafting, review, and negotiation to protect your business interests.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ABOUT PAGE -->
+  <div id="about" class="page">
+    <section style="padding-top: 140px;">
+      <div class="section-header">
+        <div class="section-label">Our Story</div>
+        <h2 class="section-title">About BIGWIG & ASSOCIATES</h2>
+        <p class="section-description">
+          A distinguished legal practice rooted in excellence, integrity, and fearless advocacy.
+        </p>
+      </div>
+
+      <div class="about-content">
+        <div class="about-image">
+          <img src="FB_IMG_1751617888322.jpg" alt="Barr. Abdul Kareem Ganiyu">
+        </div>
+        <div class="about-text">
+          <h3>Founded on Principles of Excellence</h3>
+          <p>
+            <strong>BIGWIG & ASSOCIATES</strong> was founded by <strong>Barr. Abdul Kareem Ganiyu</strong>, 
+            a seasoned legal practitioner with over 6 years of distinguished service in litigation 
+            and property law.
+          </p>
+          <p>
+            Our firm is built on the pillars of <strong>integrity, excellence, and fearless advocacy</strong>. 
+            We believe in upholding justice, protecting our clients' interests, and delivering results 
+            with boldness and precision.
+          </p>
+          <p>
+            At BIGWIG & ASSOCIATES, we don't just practice law — we champion our clients' causes 
+            with unwavering dedication. Every case is approached with meticulous preparation, 
+            strategic thinking, and aggressive representation.
+          </p>
+          <p>
+            Based in Lagos, Nigeria, we serve individuals, businesses, and organizations across 
+            various sectors, providing comprehensive legal solutions that stand the test of time.
+          </p>
+        </div>
+      </div>
+
+      <div class="quote-box">
+        <p>"Sue That Bastard."</p>
+        <div class="author">— Not just a slogan, but a fearless mindset.</div>
+      </div>
+    </section>
+  </div>
+
+  <!-- SERVICES PAGE -->
+  <div id="services" class="page">
+    <section style="padding-top: 140px;">
+      <div class="section-header">
+        <div class="section-label">Legal Solutions</div>
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-description">
+          Comprehensive legal services designed to protect, defend, and advance your interests.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">⚖️</div>
+          <h3>Strategic Legal Counsel</h3>
+          <p>
+            Receive expert legal advice tailored to your unique situation. We provide strategic 
+            planning and guidance to help you navigate complex legal landscapes and make informed 
+            decisions that protect your interests.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🏛️</div>
+          <h3>Courtroom Representation</h3>
+          <p>
+            Fearless litigation services across all courts in Nigeria. We represent clients in 
+            civil and criminal matters, defending your rights with aggressive advocacy and proven 
+            courtroom expertise.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📜</div>
+          <h3>Property Law & Advisory</h3>
+          <p>
+            Comprehensive property management services including land acquisition, title documentation, 
+            property disputes, landlord-tenant matters, and real estate transactions. We ensure your 
+            property interests are secure.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">💼</div>
+          <h3>Contract Drafting & Review</h3>
+          <p>
+            Professional contract services including drafting, review, negotiation, and dispute 
+            resolution. We ensure your agreements are legally sound and protect your business 
+            interests at every stage.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🔍</div>
+          <h3>Legal Research & Documentation</h3>
+          <p>
+            Thorough legal research, document preparation, and filing services. We handle all 
+            paperwork with meticulous attention to detail, ensuring compliance and accuracy in 
+            every legal document.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🤝</div>
+          <h3>General Legal Consultancy</h3>
+          <p>
+            Ongoing legal support for individuals and businesses. From compliance advice to dispute 
+            resolution, we serve as your trusted legal partner for all your legal needs.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- PRACTICE AREAS PAGE -->
+  <div id="practice" class="page">
+    <section style="padding-top: 140px;">
+      <div class="section-header">
+        <div class="section-label">Areas of Expertise</div>
+        <h2 class="section-title">Practice Areas</h2>
+        <p class="section-description">
+          Specialized legal expertise across multiple practice areas to serve your diverse needs.
+        </p>
+      </div>
+    </section>
+
+    <div class="practice-areas">
+      <div class="practice-grid">
+        <div class="practice-item">
+          <h4>Civil Litigation</h4>
+          <p>Comprehensive representation in civil disputes and claims</p>
+        </div>
+        <div class="practice-item">
+          <h4>Criminal Defense</h4>
+          <p>Robust defense strategies for criminal charges</p>
+        </div>
+        <div class="practice-item">
+          <h4>Property Law</h4>
+          <p>Real estate transactions, disputes, and title matters</p>
+        </div>
+        <div class="practice-item">
+          <h4>Contract Law</h4>
+          <p>Drafting, review, and enforcement of agreements</p>
+        </div>
+        <div class="practice-item">
+          <h4>Family Law</h4>
+          <p>Matrimonial matters, divorce, and custody issues</p>
+        </div>
+        <div class="practice-item">
+          <h4>Corporate Law</h4>
+          <p>Business formation, compliance, and corporate governance</p>
+        </div>
+        <div class="practice-item">
+          <h4>Employment Law</h4>
+          <p>Workplace disputes and employment contracts</p>
+        </div>
+        <div class="practice-item">
+          <h4>Debt Recovery</h4>
+          <p>Collection of outstanding debts and judgments</p>
+        </div>
+        <div class="practice-item">
+          <h4>Landlord-Tenant Law</h4>
+          <p>Rental agreements and tenancy disputes</p>
+        </div>
+        <div class="practice-item">
+          <h4>Probate & Estate</h4>
+          <p>Wills, estate planning, and administration</p>
+        </div>
+        <div class="practice-item">
+          <h4>Alternative Dispute Resolution</h4>
+          <p>Mediation and arbitration services</p>
+        </div>
+        <div class="practice-item">
+          <h4>Legal Consultancy</h4>
+          <p>General legal advice and counsel</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT PAGE -->
+  <div id="contact" class="page">
+    <section style="padding-top: 140px;">
+      <div class="section-header">
+        <div class="section-label">Get In Touch</div>
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-description">
+          Schedule a consultation today and let us help you achieve the justice you deserve.
+        </p>
+      </div>
+
+      <div class="contact-content">
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-icon">📞</div>
+            <h3>Phone</h3>
+            <p><a href="tel:+2348066608121">08066608121</a></p>
+            <p><a href="tel:+2348127025858">08127025858</a></p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">📧</div>
+            <h3>Email</h3>
+            <p><a href="mailto:ganibility@gmail.com">ganibility@gmail.com</a></p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">📍</div>
+            <h3>Office Location</h3>
+            <p>2, Omiaro Close, off Moshalashi Bustop</p>
+            <p>Jakande, Ajangbadi, Ojo LGA</p>
+            <p>Lagos, Nigeria</p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">🌐</div>
+            <h3>Social Media</h3>
+            <p>
+              <a href="https://www.facebook.com/abdulkareem.abdulganiy.7" target="_blank">
+                Facebook Profile
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div class="map-container">
+          <h3>Find Us</h3>
+          <div class="map-placeholder">
+            📍 2, Omiaro Close, Jakande, Ajangbadi, Ojo, Lagos
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>BIGWIG & ASSOCIATES</h3>
+        <p>Distinguished legal practice specializing in litigation and property law.</p>
+        <p><em>"Sue That Bastard"</em></p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <a href="#" data-page="home" class="nav-link">Home</a>
+        <a href="#" data-page="about" class="nav-link">About Us</a>
+        <a href="#" data-page="services" class="nav-link">Services</a>
+        <a href="#" data-page="contact" class="nav-link">Contact</a>
+      </div>
+
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <p>📞 08066608121 | 08127025858</p>
+        <p>📧 ganibility@gmail.com</p>
+        <p>📍 2, Omiaro Close, Jakande, Ajangbadi, Ojo, Lagos</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Office Hours</h3>
+        <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+        <p>Saturday: 10:00 AM - 2:00 PM</p>
+        <p>Sunday: Closed</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/abdulkareem.abdulganiy.7" target="_blank" class="social-link" title="Facebook">
+            📘
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 <span class="gold-text">BIGWIG & ASSOCIATES</span> | All Rights Reserved</p>
+      <p>Legal Services in Lagos, Nigeria</p>
+    </div>
+  </footer>
+
+  <!-- PWA Install Prompt -->
+  <div class="install-container" id="installContainer">
+    <div class="install-prompt">
+      <h4>📱 Install Our App</h4>
+      <p>Get quick access to BIGWIG & ASSOCIATES from your home screen!</p>
+      <div class="install-buttons">
+        <button class="install-yes" id="installButton">Install</button>
+        <button class="install-no" id="dismissButton">Maybe Later</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Navigation functionality
+    const pages = document.querySelectorAll('.page');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    const overlay = document.getElementById('overlay');
+
+    // Page navigation
+    function showPage(pageId) {
+      pages.forEach(page => {
+        page.classList.remove('active');
+      });
+      
+      document.getElementById(pageId).classList.add('active');
+      
+      // Update active nav links
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('data-page') === pageId) {
+          link.classList.add('active');
+        }
+      });
+
+      // Close mobile menu if open
+      closeMobileMenu();
+
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Add click event to all nav links
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const pageId = link.getAttribute('data-page');
+        showPage(pageId);
+      });
+    });
+
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('active');
+      overlay.classList.toggle('active');
+      document.body.style.overflow = hamburger.classList.contains('active') ? 'hidden' : '';
+    }
+
+    function closeMobileMenu() {
+      hamburger.classList.remove('active');
+      mobileNav.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', toggleMobileMenu);
+    overlay.addEventListener('click', closeMobileMenu);
+
+    // PWA Installation
+    let deferredPrompt;
+    const installContainer = document.getElementById('installContainer');
+    const installButton = document.getElementById('installButton');
+    const dismissButton = document.getElementById('dismissButton');
+
+    // Listen for beforeinstallprompt event
+    window.addEventListener('beforeinstallprompt', (e) => {
+      // Prevent the mini-infobar from appearing
+      e.preventDefault();
+      // Save the event
+      deferredPrompt = e;
+      // Show install prompt after 3 seconds
+      setTimeout(() => {
+        installContainer.classList.add('show');
+      }, 3000);
+    });
+
+    // Install button click
+    installButton.addEventListener('click', async () => {
+      if (!deferredPrompt) {
+        return;
+      }
+      // Show install prompt
+      deferredPrompt.prompt();
+      // Wait for user response
+      const { outcome } = await deferredPrompt.userChoice;
+      console.log(`User response: ${outcome}`);
+      // Clear the deferred prompt
+      deferredPrompt = null;
+      // Hide the install container
+      installContainer.classList.remove('show');
+    });
+
+    // Dismiss button click
+    dismissButton.addEventListener('click', () => {
+      installContainer.classList.remove('show');
+      // Don't show again for 7 days
+      localStorage.setItem('installDismissed', Date.now());
+    });
+
+    // Check if install was dismissed recently
+    const installDismissed = localStorage.getItem('installDismissed');
+    if (installDismissed) {
+      const daysSinceDismissed = (Date.now() - installDismissed) / (1000 * 60 * 60 * 24);
+      if (daysSinceDismissed < 7) {
+        // Don't show install prompt
+        window.addEventListener('beforeinstallprompt', (e) => {
+          e.preventDefault();
+        });
+      }
+    }
+
+    // Register service worker for PWA
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('data:text/javascript;base64,c2VsZi5hZGRFdmVudExpc3RlbmVyKCdpbnN0YWxsJywgZXZlbnQgPT4gewogIGV2ZW50LndhaXRVbnRpbCgKICAgIGNhY2hlcy5vcGVuKCd2MScpLnRoZW4oY2FjaGUgPT4gewogICAgICByZXR1cm4gY2FjaGUuYWRkQWxsKFsnLyddKTsKICAgIH0pCiAgKTsKfSk7CgpzZWxmLmFkZEV2ZW50TGlzdGVuZXIoJ2ZldGNoJywgZXZlbnQgPT4gewogIGV2ZW50LnJlc3BvbmRXaXRoKAogICAgY2FjaGVzLm1hdGNoKGV2ZW50LnJlcXVlc3QpLnRoZW4ocmVzcG9uc2UgPT4gewogICAgICByZXR1cm4gcmVzcG9uc2UgfHwgZmV0Y2goZXZlbnQucmVxdWVzdCk7CiAgICB9KQogICk7Cn0pOw==')
+          .then(registration => console.log('ServiceWorker registered'))
+          .catch(err => console.log('ServiceWorker registration failed'));
+      });
+    }
+  </script>
+
+</body>
+</html>
